@@ -1,0 +1,15 @@
+Files included in this archive:
+
+- .gitignore (668 bytes)
+- .npmrc (56 bytes)
+- .replit (462 bytes)
+- .replitignore (201 bytes)
+- package.json (649 bytes)
+- pnpm-lock.yaml (227,712 bytes)
+- pnpm-workspace.yaml (6,715 bytes)
+- replit.md (1,521 bytes)
+- skills-lock.json (4,744 bytes)
+- tsconfig.base.json (692 bytes)
+- tsconfig.json (236 bytes)
+
+- README_FIRST.txt
