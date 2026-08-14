@@ -1,0 +1,10 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ruijie-telegram-bot",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-08-15",
+  "observability": { "enabled": true },
+  "vars": {
+    "RUIJIE_BASE_URL": "https://cloud-as.ruijienetworks.com"
+  }
+}
