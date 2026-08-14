@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: ruijie-reyee-telegram-bot
+    runtime: docker
+    plan: free
+    region: singapore
+    rootDir: ruijie-telegram-bot
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    dockerCommand: python webhook.py
+    autoDeployTrigger: commit
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: ALLOWED_USER_IDS
+        sync: false
+      - key: RUIJIE_BASE_URL
+        value: https://cloud-as.ruijienetworks.com
+      - key: RUIJIE_APP_ID
+        sync: false
+      - key: RUIJIE_APP_SECRET
+        sync: false
+      - key: TELEGRAM_WEBHOOK_SECRET
+        generateValue: true
