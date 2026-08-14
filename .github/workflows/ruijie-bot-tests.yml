@@ -1,0 +1,26 @@
+name: Ruijie Bot Tests
+
+on:
+  push:
+    paths:
+      - "ruijie-telegram-bot/**"
+      - ".github/workflows/ruijie-bot-tests.yml"
+  pull_request:
+    paths:
+      - "ruijie-telegram-bot/**"
+      - ".github/workflows/ruijie-bot-tests.yml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ruijie-telegram-bot
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python -m py_compile bot.py config.py ruijie_client.py test_ruijie_client.py
+      - run: python -m unittest -v test_ruijie_client.py
