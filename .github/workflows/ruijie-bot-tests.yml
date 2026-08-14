@@ -22,5 +22,5 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - run: python -m py_compile bot.py config.py ruijie_client.py test_ruijie_client.py
+      - run: python -m py_compile bot.py webhook.py config.py ruijie_client.py test_ruijie_client.py
       - run: python -m unittest -v test_ruijie_client.py
