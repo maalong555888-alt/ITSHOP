@@ -1,7 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "ruijie-telegram-bot",
-  "main": "src/index.ts",
+  "main": "src/secure.ts",
   "compatibility_date": "2026-08-15",
   "observability": { "enabled": true },
   "vars": {
