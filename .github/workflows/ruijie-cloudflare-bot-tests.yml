@@ -1,0 +1,28 @@
+name: Ruijie Cloudflare Bot Tests
+
+on:
+  push:
+    paths:
+      - "ruijie-cloudflare-bot/**"
+      - ".github/workflows/ruijie-cloudflare-bot-tests.yml"
+  pull_request:
+    paths:
+      - "ruijie-cloudflare-bot/**"
+      - ".github/workflows/ruijie-cloudflare-bot-tests.yml"
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ruijie-cloudflare-bot
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: ruijie-cloudflare-bot/package.json
+      - run: npm install
+      - run: npm run check
+      - run: npx wrangler deploy --dry-run
