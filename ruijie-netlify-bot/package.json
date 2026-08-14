@@ -1,0 +1,8 @@
+{
+  "name": "ruijie-telegram-netlify",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {"typecheck": "tsc --noEmit"},
+  "dependencies": {"@netlify/functions": "latest"},
+  "devDependencies": {"typescript": "latest"}
+}
